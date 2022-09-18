@@ -1,29 +1,9 @@
 import React from 'react'
-import "./App.css";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import SharedLayout from './components/sharedLayout'
-import {AllTodo, AddTodo, Edit, Error, Login, ProtectedRoute} from './pages'
-function App() {
+
+const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/landing" element={<Login />}></Route>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <SharedLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index path="/add-Todo" element={<AddTodo />}></Route>
-          <Route path="/all-Todo" element={<AllTodo />}></Route>
-          <Route path="/edit/:id" element={<Edit />}></Route>
-          <Route path="*" element={<Error />}></Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    <div>App</div>
+  )
 }
 
-export default App;
+export default App
