@@ -1,4 +1,8 @@
-const reducer =(state,action)=>{
+const initialState={
+    isLoading:false,
+    data:[],
+    isError:false
+};
 
-}
-export default reducerx
+const reducer = (state = initialState, action) => {};
+export default reducer;
