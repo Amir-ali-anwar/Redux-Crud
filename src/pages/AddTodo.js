@@ -1,10 +1,12 @@
 import React from "react";
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 import { Button, FormRow, Alert } from "../components";
-import AllTodo from "./AllTodo";
 import customFetch from "../utils/axios";
 import { useNavigate } from "react-router-dom";
-
+const initialState = {
+  name: "",
+  position: "",
+};
 const AddTodo = () => {
   const navigate = useNavigate();
   const [values, SetValues] = React.useState(initialState);
