@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <Wrapper>
       <div className="nav-center">
-        <h3 class="logo-text">React CRUD</h3>
+        <h3 class="logo-text">React Redux CRUD</h3>
         <div>
           <div className="btn-container">
             <Button type="button" className="btn" handleChange={logoutHandler}>

@@ -3,9 +3,9 @@ import { Navigate } from "react-router-dom";
 import { getUserFromLocalStorage } from "../utils/localStorage";
 const user = getUserFromLocalStorage();
 const ProtectedRoute = ({ children }) => {
-  if (!user) {
-    return <Navigate to="/landing" />;
-  }
+  // if (!user) {
+  //   return <Navigate to="/landing" />;
+  // }
   return children;
 };
 

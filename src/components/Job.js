@@ -4,26 +4,11 @@ import { Link } from "react-router-dom";
 import Button from './Button'
 import customFetch from "../utils/axios";
 import { useEffect } from 'react';
-const Job = ({ name, position, id, submitDatatoServer }) => {
-  let link = `/edit/${id}`;
-  const deleteDatatoServer = async (id) => {
-    try {
-      const result = await customFetch.delete(`/users/${id}`);
-      return result.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const deleteHandler = async (id) => {
-    await deleteDatatoServer(id);
-  };
-  useEffect(() => {
-    submitDatatoServer();
-  }, [deleteHandler]);
+const Job = ({ name='amir', position='amir' }) => {
   return (
     <Wrapper className="content">
       <header>
-        <div className="main-icon">{name.charAt(0) || 'No'}</div>
+        <div className="main-icon">{'No'}</div>
         <div className="info">
           <p>{name}</p>
           <h5>{position}</h5>
@@ -31,13 +16,13 @@ const Job = ({ name, position, id, submitDatatoServer }) => {
       </header>
       <footer>
         <div className="actions">
-          <Link className="btn edit-btn" to={link}>
+          <Link className="btn edit-btn" >
             edit
           </Link>
           <Button
             type="button"
             className="btn delete-btn"
-            handleChange={() => deleteHandler(id)}
+            // handleChange={() => deleteHandler(id)}
           >
             Delete
           </Button>
