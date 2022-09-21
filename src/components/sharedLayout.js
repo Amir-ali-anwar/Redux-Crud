@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from './Header'
-import Wrapper from "assets/wrappers/SharedLayout";
+import Wrapper from "../assets/wrappers/SharedLayout";
 const SharedLayout = () => {
   return (
     <Wrapper>

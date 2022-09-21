@@ -1,7 +1,7 @@
 import React from "react";
-import Wrapper from "assets/wrappers/Navbar";
+import Wrapper from "../assets/wrappers/Navbar";
 import { FaAlignLeft, FaUserCircle, FaCaretDown } from "react-icons/fa";
-import { Button } from "components/";
+import { Button } from ".";
 const Header = () => {
     const [toggleLogOut, SettoggleLogOut] = React.useState(false);
     const logoutHandler = () => {
