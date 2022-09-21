@@ -1,8 +1,8 @@
 import React from 'react'
-import Wrapper from "assets/wrappers/Job";
+import Wrapper from "../assets/wrappers/Job";
 import { Link } from "react-router-dom";
-import Button from 'components/Button'
-import customFetch from "utils/axios";
+import Button from './Button'
+import customFetch from "../utils/axios";
 import { useEffect } from 'react';
 const Job = ({ name, position, id, submitDatatoServer }) => {
   let link = `/edit/${id}`;
