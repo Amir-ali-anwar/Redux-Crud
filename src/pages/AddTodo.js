@@ -15,10 +15,14 @@ const AddTodo = () => {
     const value = e.target.value;
     SetValues({ ...values, [name]: value });
   };
+  const submitHandler=(e)=>{
+    e.preventDefault();
+        console.log("values", values);
+  }
   return (
     <>
       <Wrapper>
-        <form className="form">
+        <form className="form" onSubmit={submitHandler}>
           <h3>Add user</h3>
           <div className="form-center">
             <FormRow
