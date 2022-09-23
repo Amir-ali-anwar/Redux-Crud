@@ -2,6 +2,7 @@ import {
   GET_TODO_BEGIN,
   GET_TODO_SUCCESS,
   GET_TODO_ERROR,
+  DELETE_TODO_BEGIN,
 } from "../utils/actions";
 import customFetch from "../utils/axios";
 import axios from "axios";
@@ -17,6 +18,7 @@ export const fetchTodos = () => {
     }
   };
 };
+
 export const fetchTodoRequest = () => {
   return {
     type: GET_TODO_BEGIN,
@@ -34,3 +36,10 @@ export const fetchTodoFailure = (error) => {
     payload: error,
   };
 };
+export const deleteTodo = (id) => {
+  return {
+    type: DELETE_TODO_BEGIN,
+    payload:customFetch.delete(`/users/${id}`)
+  };
+};
+

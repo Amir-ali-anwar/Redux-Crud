@@ -10,16 +10,17 @@ const AllTodo = () => {
  const dispatch = useDispatch();
    const  data = useSelector((state) => state?.data);
    const isLoading = useSelector((state) => state?.isLoading);
-   console.log(isLoading);
    useEffect(() => {
    dispatch(fetchTodos());
  }, [])
  if (isLoading) {
-   return <Loading />;
+   return <Loading center />;
  }
   return (
     <Wrapper>
-      <h5>5 Found</h5>
+      <h5>
+        {data.length} user{data.length > 1 && "s"} Found
+      </h5>
       <div className="jobs">
         {data?.map((user) => {
           return <Job key={user.id} {...user} />;
