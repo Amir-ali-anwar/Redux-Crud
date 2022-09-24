@@ -3,6 +3,7 @@ import {
   GET_TODO_SUCCESS,
   GET_TODO_ERROR,
   DELETE_TODO_BEGIN,
+  ADD_TODO_BEGIN,
 } from "../utils/actions";
 import customFetch from "../utils/axios";
 import axios from "axios";
@@ -43,3 +44,9 @@ export const deleteTodo = (id) => {
   };
 };
 
+export const addTodo=(user)=>{
+return {
+  type: ADD_TODO_BEGIN,
+  payload: customFetch.post("/users", user),
+};
+}

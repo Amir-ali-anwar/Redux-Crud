@@ -2,3 +2,4 @@ export const GET_TODO_BEGIN = "GET_TODO_BEGIN";
 export const GET_TODO_SUCCESS = "GET_TODO_SUCCESS";
 export const GET_TODO_ERROR = "GET_TODO_ERROR";
 export const DELETE_TODO_BEGIN = "DELETE_TODO_BEGIN";
+export const ADD_TODO_BEGIN = "ADD_TODO_BEGIN";

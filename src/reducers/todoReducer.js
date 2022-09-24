@@ -3,15 +3,16 @@ import {
   GET_TODO_SUCCESS,
   GET_TODO_ERROR,
   DELETE_TODO_BEGIN,
+  ADD_TODO_BEGIN,
 } from "../utils/actions";
 const initialState = {
   isLoading: false,
   data: [],
   isError: "",
 };
+console.log(initialState);
 
 const reducer = (state = initialState, action) => {
-  console.log(action.payload)
   switch (action.type) {
     case GET_TODO_BEGIN:
       return {
@@ -31,10 +32,15 @@ const reducer = (state = initialState, action) => {
         isError: action.payload,
       };
     case DELETE_TODO_BEGIN:
-    return {
-      ...state,
-      data:action.payload,
-    };
+      return {
+        ...state,
+        data: action.payload,
+      };
+    case ADD_TODO_BEGIN:
+      return {
+        ...state,
+        data: action.payload,
+      };
     default:
       return state;
   }

@@ -1,13 +1,15 @@
 import React from "react";
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 import { Button, FormRow, Alert } from "../components";
-import customFetch from "../utils/axios";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addTodo } from "../reducers/todoaction";
 const initialState = {
   name: "",
   position: "",
 };
 const AddTodo = () => {
+    const dispatch = useDispatch();
   const navigate = useNavigate();
   const [values, SetValues] = React.useState(initialState);
   const inputhandler = (e) => {
@@ -17,7 +19,9 @@ const AddTodo = () => {
   };
   const submitHandler=(e)=>{
     e.preventDefault();
-        console.log("values", values);
+    console.log("values", values);
+    dispatch(addTodo(values));
+     navigate("/all-Todo");
   }
   return (
     <>

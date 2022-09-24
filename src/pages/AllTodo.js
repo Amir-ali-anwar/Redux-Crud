@@ -7,15 +7,16 @@ import customFetch from "../utils/axios";
 import Loading from "../components/Loading";
 import { fetchTodos } from "../reducers/todoaction";
 const AllTodo = () => {
- const dispatch = useDispatch();
-   const  data = useSelector((state) => state?.data);
-   const isLoading = useSelector((state) => state?.isLoading);
-   useEffect(() => {
-   dispatch(fetchTodos());
- }, [])
- if (isLoading) {
-   return <Loading center />;
- }
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state?.data);
+  console.log(data);
+  const isLoading = useSelector((state) => state?.isLoading);
+  useEffect(() => {
+    dispatch(fetchTodos());
+  }, []);
+  if (isLoading) {
+    return <Loading center />;
+  }
   return (
     <Wrapper>
       <h5>
