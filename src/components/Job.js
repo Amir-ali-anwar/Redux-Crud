@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Wrapper from "../assets/wrappers/Job";
 import { Link } from "react-router-dom";
 import Button from './Button'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchTodos, deleteTodo } from "../reducers/todoaction";
 const Job = ({ name, position, id }) => {
-  const submitHandler=()=>{
-    dispatch(deleteTodo(id))
-    dispatch(fetchTodos());
-  }
   const dispatch = useDispatch();
+  const submitHandler=()=>{
+   dispatch(deleteTodo(id))
+  dispatch(fetchTodos())
+  }
   return (
     <Wrapper className="content">
       <header>

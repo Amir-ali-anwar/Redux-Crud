@@ -6,14 +6,12 @@ import {
   ADD_TODO_BEGIN,
 } from "../utils/actions";
 import customFetch from "../utils/axios";
-import axios from "axios";
 export const fetchTodos = () => {
   return async function (dispatch) {
     dispatch(fetchTodoRequest());
     try {
       const res = await customFetch.get("/users");
-      const data = await res;
-      dispatch(fetchTodoSuccess(data?.data));
+      dispatch(fetchTodoSuccess(res?.data));
     } catch (error) {
       dispatch(fetchTodoFailure(error.message));
     }
@@ -40,10 +38,10 @@ export const fetchTodoFailure = (error) => {
 export const deleteTodo = (id) => {
   return {
     type: DELETE_TODO_BEGIN,
+    // payload:id
     payload:customFetch.delete(`/users/${id}`)
   };
 };
-
 export const addTodo=(user)=>{
 return {
   type: ADD_TODO_BEGIN,

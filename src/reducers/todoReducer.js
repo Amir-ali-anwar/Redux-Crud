@@ -10,8 +10,6 @@ const initialState = {
   data: [],
   isError: "",
 };
-console.log(initialState);
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_TODO_BEGIN:

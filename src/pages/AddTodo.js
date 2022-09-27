@@ -19,9 +19,8 @@ const AddTodo = () => {
   };
   const submitHandler=(e)=>{
     e.preventDefault();
-    console.log("values", values);
     dispatch(addTodo(values));
-     navigate("/all-Todo");
+    // navigate("/all-Todo");
   }
   return (
     <>

@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Wrapper from "../assets/wrappers/JobsContainer";
 import Job from "../components/Job";
-import customFetch from "../utils/axios";
 import Loading from "../components/Loading";
 import { fetchTodos } from "../reducers/todoaction";
 const AllTodo = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state?.data);
-  console.log(data);
-  const isLoading = useSelector((state) => state?.isLoading);
   useEffect(() => {
     dispatch(fetchTodos());
   }, []);
+  const data = useSelector((state) => state?.data);
+  console.log('data is data',data);
+  const isLoading = useSelector((state) => state?.isLoading);
   if (isLoading) {
     return <Loading center />;
   }
